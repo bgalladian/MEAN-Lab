@@ -1,0 +1,22 @@
+[
+  {
+    "name": "MacBook",
+    "cost": 1300,
+    "description": "Overpriced piece of metal",
+    "imageUrl": "https://store.storeimages.cdn-apple.com/4974/as-images.apple.com/is/image/AppleInc/aos/published/images/m/ac/macbook/select/macbook-select-gold-201604?wid=470&hei=556&fmt=png-alpha&qlt=95&.v=1473974022369"
+  },
+  {
+    "name": "iPhone 7s",
+    "cost": 750,
+    "description": "Inferior Android device, no headphone jack.  WTF?!",
+    "imageUrl": "https://www.o2.co.uk/shop/homepage/images/shop15/brand/apple/iphone-7-plus/apple-iphone-7-plus-gallery-img-6.jpg"
+
+  },
+  {
+    "name": "Apple Watch",
+    "cost": 400,
+    "description": "Why? Just...why?",
+    "imageUrl": "https://9to5mac.files.wordpress.com/2016/05/best-buy-apple-watch-sale.jpg?quality=82&strip=all&w=1600"
+
+  }
+]
