@@ -1,0 +1,13 @@
+<h2>{{vm.review.name}}</h2>
+<p>{{vm.review.cost}}</p>
+<p>{{vm.review.description}}</p>
+<p>{{vm.review.imageUrl}}
+
+
+
+
+<input type="text" ng-model="vm.review.name" placeholder="Name" />
+<input type="number" ng-model="vm.review.cost" placeholder="Cost" />
+<input type="text" ng-model="vm.review.image_url" placeholder="Photo URL" />
+<textarea rows="8" cols="80" ng-model="vm.newReview.desciption" placeholder="Description" />
+<button type="submit" name="button">Update</button>

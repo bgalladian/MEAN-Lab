@@ -1,4 +1,15 @@
 <h2>MEAN Reviews!</h2>
-<p data-ng-repeat="meanReview in vm.meanReviews">
-  {{meanReviews.name}}
+<p data-ng-repeat="review in vm.reviews">
+      <a data-ui-sref="show({name: review.name})">{{review.name}}</a>
 </p>
+
+
+Add a New Product for Review!
+<form ng-submit = "vm.create()">
+  <input type="text" ng-model="vm.newReview.name" placeholder="Name"><br>
+  <input type="number" ng-model="vm.newReview.cost" placeholder="Cost"><br>
+  <input type="text" ng-model="vm.newReview.image_url" placeholder="Picture URL"><br>
+  <textarea rows="8" cols="80" ng-model="vm.newReview.desciption" placeholder="Description"></textarea><br>
+  <button type="submit" name="button">Submit</button>
+
+</form>

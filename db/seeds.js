@@ -1,8 +1,9 @@
-const MeanReview = require('./models.js').MeanReview
-let seedData = require('./seedData.json')
+const Review = require('./models.js').Review
+var mongoose = require("./connection")
+let seedData = require('./seedData')
 
-MeanReview.remove({}, () => {
-  MeanReview.create(seedData, () => {
+Review.remove({}, () => {
+  Review.create(seedData, () => {
     process.exit()
   })
 })

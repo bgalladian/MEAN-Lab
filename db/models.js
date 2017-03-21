@@ -1,13 +1,17 @@
 const mongoose = require("./connection.js")
-const MeanReviewSchema = new mongoose.Schema({
+const ReviewSchema = new mongoose.Schema(
+{
   name: String,
   cost: Number,
   description: String,
   imageUrl: String
-})
+}
+)
 
-const MeanReview = mongoose.model('MeanReview', MeanReviewSchema)
+mongoose.model("Review", ReviewSchema)
+mongoose.connect("mongodb://localhost/mean_reviews")
+// const Review = mongoose.model('Review', ReviewSchema)
 
 module.exports = {
-  MeanReview
+  Review
 }
