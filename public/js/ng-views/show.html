@@ -1,13 +1,19 @@
+<a href="#/mean_reviews"><button>Go back</button></a>
+
 <h2>{{vm.review.name}}</h2>
-<p>{{vm.review.cost}}</p>
-<p>{{vm.review.description}}</p>
-<p>{{vm.review.imageUrl}}
+<p>Price: ${{vm.review.cost}}</p>
+<p>Review: {{vm.review.description}}</p>
+<img src="{{vm.review.imageUrl}}">
 
 
 
-
-<input type="text" ng-model="vm.review.name" placeholder="Name" />
-<input type="number" ng-model="vm.review.cost" placeholder="Cost" />
-<input type="text" ng-model="vm.review.image_url" placeholder="Photo URL" />
-<textarea rows="8" cols="80" ng-model="vm.newReview.desciption" placeholder="Description" />
-<button type="submit" name="button">Update</button>
+<form data-ng-submit="vm.update()">
+  <input type="text" ng-model="vm.review.name" value="vm.review.name" />
+  <input type="number" ng-model="vm.review.cost" value="vm.review.cost" />
+  <input type="text" ng-model="vm.review.imageUrl" value="vm.review.imageUrl" />
+  <textarea rows="8" cols="80" ng-model="vm.review.description" value="vm.review.description"></textarea><br>
+  <button type="submit" name="button">Update</button>
+</form>
+<form>
+<button data-ng-click="vm.destroy()">Delete Review</button>
+</form>

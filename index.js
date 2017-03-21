@@ -1,5 +1,4 @@
 var express = require('express')
-// var Review = require('./db/models.js').Review
 var parser = require('body-parser')
 var hbs = require("express-handlebars")
 var mongoose = require ('./db/connection')
@@ -16,8 +15,6 @@ app.engine(".hbs", hbs({
   layoutsDir:     "views/",
   defaultLayout:  "layout"
 }));
-
-
 
 app.get('/', (req, res) => {
   res.sendFile(__dirname + "/index.html")
@@ -46,7 +43,7 @@ app.post("/api/mean_reviews", function(req, res){
   });
 });
 
-app.post("/api/mean_reviews/:name/delete", function(req, res){
+app.delete("/api/mean_reviews/:name", function(req, res){
   Review.findOneAndRemove({name: req.params.name}).then(function(){
     res.json({success: true})
   });

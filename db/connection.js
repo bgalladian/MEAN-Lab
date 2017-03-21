@@ -1,13 +1,12 @@
 const mongoose = require ('mongoose')
-const ReviewSchema = new mongoose.Schema (
-  {
+
+const ReviewSchema = new mongoose.Schema ({
     name: String,
     cost: Number,
     description: String,
     imageUrl: String
   }
 )
-
 
 mongoose.model("Review", ReviewSchema)
 mongoose.connect('mongodb://localhost/mean_reviews', (err) => {

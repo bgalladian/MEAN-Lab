@@ -19,6 +19,7 @@ angular
   ])
   .controller("showController", [
     "$state",
+    "$stateParams",
     "MeanReviewsFactory",
     ShowControllerFunction
   ])
@@ -51,14 +52,20 @@ angular
     this.newReview = new MeanReviewsFactory()
     this.create = function() {
       this.newReview.$save().then((review) => {
-        $state.go("reviewShow", {id: review.name})
+        $state.go("show", {name: review.name})
       })
     }
   }
 
-  function ShowControllerFunction(MeanReviewsFactory, $stateParams, $state) {
+  function ShowControllerFunction($state, $stateParams ,MeanReviewsFactory) {
     this.review = MeanReviewsFactory.get({ name: $stateParams.name })
-    this.update = function(){
+    this.update = () => {
       this.review.$update({ name: $stateParams.name })
+    }
+    // console.log(this);
+    this.destroy = () => {
+      this.review.$delete({name: $stateParams.name}).then(() => {
+        $state.go("index")
+      })
     }
   }
